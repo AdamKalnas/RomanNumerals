@@ -14,6 +14,12 @@ class RomanNumerals
       @num -= 10
       roman_numeral = roman_numeral + 'x'
     end
+  
+    if num == 9
+      @num = @num - 9
+      roman_numeral = roman_numeral + 'ix'
+    end
+
     roman_numeral
   end
 
