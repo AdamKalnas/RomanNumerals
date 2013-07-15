@@ -24,4 +24,7 @@ describe 'When converting roman numerals into normal numbers' do
     subject.convert(5).should == 'v'
   end
 
+  it 'converts 6' do
+    subject.convert(6).should == 'vi'
+  end
 end

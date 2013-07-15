@@ -9,19 +9,16 @@ class RomanNumerals
   end
 
   def convert_fives(num, romanNumeral)
-    if num <= 3
-      return romanNumeral
-    end
-
-    if num == 5
-      romanNumeral = romanNumeral + 'v' 
+    if num >= 5
+      romanNumeral = romanNumeral + 'v'
+      @num = @num -5
     end
 
     if num == 4
       romanNumeral = romanNumeral + "iv"
-    end 
-    
-    @num =0
+      @num = 0
+    end
+
     romanNumeral
   end
 
