@@ -3,16 +3,17 @@ class RomanNumerals
 
   def convert(num)
     @num = num
-    romanNumeral = convert_fives!(@num)
+    romanNumeral = ''
+    romanNumeral += convert_fives(@num, romanNumeral)
     romanNumeral += convert_singles(@num)
   end
 
-  def convert_fives!(num)
+  def convert_fives(num, romanNumeral)
     if num > 3
       @num = @num - 5
-      return 'v'
+      romanNumeral = romanNumeral + 'v' 
     end
-    ''
+    romanNumeral
   end
 
   def convert_singles(num)
