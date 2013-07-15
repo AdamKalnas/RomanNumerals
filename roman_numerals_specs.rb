@@ -1,11 +1,15 @@
 require 'rspec.rb'
 require_relative 'roman_numerals.rb'
 
-describe 'Roman numeral specs' do
+describe 'When converting roman numerals into normal numbers' do
   subject = RomanNumerals.new
 
-  it 'convert 1' do
+  it 'converts 1' do
     subject.convert(1).should == 'i'
+  end
+
+  it 'converts 2' do
+    subject.convert(2).should == 'ii'
   end
 
 end
