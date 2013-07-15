@@ -1,42 +1,41 @@
 class RomanNumerals
-  @num = ''
 
   def convert(num)
     @num = num
-    romanNumeral = ''
-    romanNumeral += convert_tens(@num, romanNumeral)
-    romanNumeral += convert_fives(@num, romanNumeral)
-    romanNumeral += convert_singles(@num)
+    roman_numeral = ''
+    roman_numeral = convert_tens(@num, roman_numeral)
+    roman_numeral = convert_fives(@num, roman_numeral)
+    roman_numeral = convert_singles(@num, roman_numeral)
   end
 
 
-  def convert_tens(num, romanNumeral)
+  def convert_tens(num, roman_numeral)
     if num >= 10
       @num -= 10
-      romanNumeral = romanNumeral + 'x'
+      roman_numeral = roman_numeral + 'x'
     end
-    romanNumeral
+    roman_numeral
   end
 
-  def convert_fives(num, romanNumeral)
+  def convert_fives(num, roman_numeral)
     if num >= 5
-      romanNumeral = romanNumeral + 'v'
-      @num = @num -5
+      roman_numeral = roman_numeral + 'v'
+      @num = @num - 5
     end
 
     if num == 4
-      romanNumeral = romanNumeral + "iv"
+      roman_numeral = roman_numeral + "iv"
       @num = 0
     end
 
-    romanNumeral
+    roman_numeral
   end
 
-  def convert_singles(num)
-    roman_numeral = ''
+  def convert_singles(num, roman_numeral)
+    ones = ''
     num.times do
-      roman_numeral += 'i'
+      ones += 'i'
     end
-    roman_numeral
+    roman_numeral + ones
   end
 end
