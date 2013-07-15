@@ -10,7 +10,7 @@ class RomanNumerals
   def convert_fives!(num)
     if num > 3
       @num = @num - 5
-      return 'v'
+      'v'
     end
     ''
   end
