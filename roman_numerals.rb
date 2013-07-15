@@ -1,5 +1,5 @@
 class RomanNumerals
-  def translate(numberToTranslate)
-    1
+  def convert(num)
+    'i'
   end
 end
