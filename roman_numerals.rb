@@ -4,8 +4,18 @@ class RomanNumerals
   def convert(num)
     @num = num
     romanNumeral = ''
+    romanNumeral += convert_tens(@num, romanNumeral)
     romanNumeral += convert_fives(@num, romanNumeral)
     romanNumeral += convert_singles(@num)
+  end
+
+
+  def convert_tens(num, romanNumeral)
+    if num >= 10
+      @num -= 10
+      romanNumeral = romanNumeral + 'x'
+    end
+    romanNumeral
   end
 
   def convert_fives(num, romanNumeral)
