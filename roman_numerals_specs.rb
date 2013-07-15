@@ -12,4 +12,8 @@ describe 'When converting roman numerals into normal numbers' do
     subject.convert(2).should == 'ii'
   end
 
+  it 'converts 3' do
+    subject.convert(3).should == 'iii'
+  end
+
 end
