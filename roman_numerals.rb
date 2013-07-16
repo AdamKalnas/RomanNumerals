@@ -12,7 +12,7 @@ class RomanNumerals
   def convert_digits(number_to_convert, digit_to_convert, roman_numeral)
     roman_numeral_map = { 10 => 'x', 5 => 'v' }
     if number_to_convert >= digit_to_convert
-      @num = @num - digit_to_convert
+      @num -= digit_to_convert
       roman_numeral = roman_numeral + roman_numeral_map[digit_to_convert]
     end
     convert_special_cases(number_to_convert, roman_numeral)
@@ -20,12 +20,12 @@ class RomanNumerals
 
   def convert_special_cases(num, roman_numeral)
     if num == 9
-      @num = @num - 9
+      @num -= 9
       roman_numeral = roman_numeral + 'ix'
     end
     if num == 4
       roman_numeral = roman_numeral + "iv"
-      @num = 0
+      @num -= 4
     end
     roman_numeral
   end
@@ -37,5 +37,4 @@ class RomanNumerals
     end
     roman_numeral + ones
   end
-
 end
