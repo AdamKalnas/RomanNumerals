@@ -39,4 +39,8 @@ describe 'When converting roman numerals into normal numbers' do
   it 'converts 10' do
     subject.convert(10).should == 'x'
   end
+
+  it 'converts 12' do
+    subject.convert(12).should == 'xii'
+  end
 end
