@@ -10,9 +10,10 @@ class RomanNumerals
 
 
   def convert_digits(number_to_convert, digit_to_convert, roman_numeral)
+    roman_numeral_map = { 10 => 'x', 5 => 'v' }
     if number_to_convert >= digit_to_convert
       @num = @num - digit_to_convert
-      roman_numeral = roman_numeral + get_symbol(digit_to_convert)
+      roman_numeral = roman_numeral + roman_numeral_map[digit_to_convert]
     end
     convert_special_cases(number_to_convert, roman_numeral)
   end
@@ -29,17 +30,6 @@ class RomanNumerals
     roman_numeral
   end
 
-  def get_symbol(num)
-    case num
-      when 10
-        'x'
-      when 5
-        'v'
-      else
-        ''
-    end
-  end
-
   def convert_singles(num, roman_numeral)
     ones = ''
     num.times do
@@ -47,4 +37,5 @@ class RomanNumerals
     end
     roman_numeral + ones
   end
+
 end
